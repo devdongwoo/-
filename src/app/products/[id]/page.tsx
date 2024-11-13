@@ -22,6 +22,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
   return (
     <div>
+      <h2>{data?.title}</h2>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   )
