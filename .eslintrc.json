@@ -4,5 +4,14 @@
     "next/typescript",
     "plugin:tailwindcss/recommended",
     "plugin:prettier/recommended"
-  ]
+  ],
+  // Delete `␍` 에러로 수정함
+  "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto",
+            },
+        ],
+    },
 }

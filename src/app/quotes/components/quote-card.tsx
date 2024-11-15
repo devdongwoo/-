@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/button'
 export interface QuoteCardProps {
   quote: string
   author: string
-  isFavorite: boolean
+  id: string
+  isSelected: { [key: string]: boolean }
   onFavorite: () => void
 }
 
@@ -14,8 +15,9 @@ export function QuoteCard({
   className,
   quote,
   author,
-  isFavorite,
+  isSelected,
   onFavorite,
+  id,
   ...props
 }: QuoteCardProps & HTMLAttributes<HTMLDivElement>) {
   return (
@@ -29,7 +31,7 @@ export function QuoteCard({
         onClick={onFavorite}
         variant="ghost"
       >
-        {isFavorite ? (
+        {isSelected[id] ? (
           <StarIcon fill={'#FFD700'} stroke={'#FFD700'} />
         ) : (
           <StarIcon fill={'transparent'} className={'text-gray-400'} />
